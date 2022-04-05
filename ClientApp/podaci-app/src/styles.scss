@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; }
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    margin-top: auto;
+    color: #6c757d !important;
+    background-color: #f8f9fa !important;
+    display: flex;
+    justify-content: center;
+    padding: 1.5em;
+}
+header {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #315cf7, #7380d9);
+    color: #fff;
+}
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+@media only screen and (min-width: 1001px) {
+    .header-title, .data-section {
+        width: 1000px !important;
+    }
+  }
+
+
+

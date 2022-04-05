@@ -1,0 +1,57 @@
+table {
+	border-collapse: collapse;
+    font-family: Tahoma, Geneva, sans-serif;
+    width: 100%;
+}
+td {
+    padding: 15px;
+    border: 1px solid #dddddd;
+}
+th {
+	padding: 15px;
+}
+thead {
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+}
+.buttons {
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.buttons-reverse {
+    flex-direction: row-reverse;
+}
+.btn {
+    border: none;
+    padding: 1em;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+}
+.btn-green {
+    background: #00970091;
+    
+}
+.btn-blue{
+    background: #6781ff;
+}
+.message {
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 1em;
+    text-align: center;
+}
+.error {
+    border-color: #c70000;
+    background: #ff000045;
+    color: #c70000;
+}
+.success {
+    border-color: #009700;
+    background: #00970033;
+    color: #009700;
+}

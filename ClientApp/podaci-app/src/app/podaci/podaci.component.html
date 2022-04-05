@@ -1,0 +1,36 @@
+<div>
+  <div class="message" [ngClass]="{error: error, success: success}" *ngIf="error || success">
+    {{message}}
+  </div>
+  <div class="buttons">
+    <button class="btn btn-blue" (click)="getPodaci()">Učitaj podatke</button>
+  </div>
+  <div *ngIf="loading" class="loader">Učitavanje...</div>
+  <div *ngIf="podaci.length > 0">
+
+  
+    <table class="styled-table" >
+    <thead>
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Poštanski Broj</th>
+            <th>Grad</th>
+            <th>Telefon</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of podaci" [ngClass]="{error: !item.ispravan}">
+          <td>{{item.ime}}</td>
+          <td>{{item.prezime}}</td>
+          <td>{{item.postanskiBroj}}</td>
+          <td>{{item.grad}}</td>
+          <td>{{item.telefon}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="buttons buttons-reverse">
+  <button  (click)="savePodaci()" class="btn btn-green">Spremi podatke</button>
+</div>
+</div>
+</div>

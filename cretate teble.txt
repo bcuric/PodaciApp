@@ -1,0 +1,27 @@
+CREATE TABLE dbo.Podaci(
+	Ime nvarchar(50) NOT NULL,
+	Prezime nvarchar(50) NOT NULL,
+	Postanski_broj int NOT NULL,
+	Grad nvarchar(50) NOT NULL,
+	Telefon nvarchar(50) NOT NULL,
+ CONSTRAINT Unikati UNIQUE 
+(
+	Ime,
+	Prezime,
+	Postanski_broj,
+	Grad,
+	Telefon
+))
+
+
+CREATE PROCEDURE Insert_Podaci  @Ime nvarchar(50),@Prezime nvarchar(50),@Postanski_broj int,@Grad nvarchar(50),@Telefon nvarchar(50)
+AS  
+
+BEGIN TRY
+ INSERT INTO dbo.Podaci(Ime,Prezime,Postanski_broj,Grad,Telefon)
+	VALUES (@Ime,@Prezime,@Postanski_broj,@Grad,@Telefon)
+END TRY  
+BEGIN CATCH  
+	EXEC xp_logevent 51000, 'The record already exist.', 1;
+     	THROW 51000, 'The record already exist.', 1; 
+END CATCH; 
